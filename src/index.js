@@ -8,10 +8,15 @@ import reducer from './reducers';
 import App from './App'
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
+import movieReducer from './reducers';
+
+const store = createStore(reducer)//passing in the reducer to set state.
 
 ReactDOM.render(
+  <Provider store={store}>
   <Router>
       <App />
-  </Router>,
+  </Router>
+  </Provider>,
   document.getElementById('root')
 );
