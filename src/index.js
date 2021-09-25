@@ -1,22 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-import { Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
 import reducer from './reducers';
 
 import App from './App'
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-import movieReducer from './reducers';
 
-const store = createStore(reducer)//passing in the reducer to set state.
+const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router>
+    <Router>
       <App />
-  </Router>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
